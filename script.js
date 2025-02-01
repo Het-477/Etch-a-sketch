@@ -4,9 +4,9 @@ const sliderContainer = document.querySelector("#slider-container");
 const slider = document.querySelector("#slider");
 const sliderValue = document.querySelector("#slider-value");
 
-sliderValue.textContent = `Resolution: (${slider.value} x ${slider.value})`;
+sliderValue.textContent = `RESOLUTION: (${slider.value} x ${slider.value})`;
 
-function generateSketchpadPixels(size = 16) { // default sketchpad size
+function generateSketchpadPixels(size) { // default sketchpad size
     sketchpad.innerHTML = ""; // resets (clears) the pad when its resized
     sketchpad.style.setProperty('--grid-size', size);
     // sketchpad.style.setProperty('--pad-side', PAD_SIDE);
@@ -21,10 +21,10 @@ function generateSketchpadPixels(size = 16) { // default sketchpad size
     }
 }
 
-function eraseSketchPad() {
+function eraseSketchPadPixels() {
     document.querySelectorAll(".sketchpad-pixel").forEach(pixel => {
         pixel.style.backgroundColor = "white";
     });
 }
 
-generateSketchpadPixels()
+generateSketchpadPixels(16)
