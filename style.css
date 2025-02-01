@@ -15,7 +15,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: aquamarine;
+    background-color: antiquewhite;
 }
 
 .container {
@@ -36,10 +36,56 @@ body {
     width: calc(600px / var(--grid-size));
     height: calc(600px / var(--grid-size));
     background-color: white;
-    border: 1px solid antiquewhite ;
+    border: 1px solid rgb(252, 204, 141);
     box-sizing: border-box;
 }
 
 .controls {
     margin-bottom: 10px;
+    /* padding: 5px; */
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#clear-btn {
+    width: 20%;
+}
+
+#slider-container {
+    width: 100%;
+    margin-top: 8px;
+}
+
+#slider {
+    /* -webkit-appearance: ; */
+    appearance: none;
+    height: 24px;
+    width: 100%;
+    background: rgb(185, 248, 227);
+    outline: none;
+    transition: opacity .4s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 22px;
+    background: rgb(1, 243, 162);
+    cursor: pointer;
+    /* border-radius: 5px; */
+    /* border: 2px solid darkred; */
+}
+
+/* Style for Firefox */
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 22px;
+    background: brown;
+    cursor: pointer;
+    /* border-radius: 5px; */
+    border: 2px solid darkred;
 }
