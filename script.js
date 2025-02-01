@@ -16,4 +16,10 @@ function generateSketchpadPixels(size = 16) { // default sketchpad size
     }
 }
 
+function eraseSketchPad() {
+    document.querySelectorAll(".sketchpad-pixel").forEach(pixel => {
+        pixel.style.backgroundColor = "white";
+    });
+}
+
 generateSketchpadPixels()
