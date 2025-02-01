@@ -1,7 +1,12 @@
-// const PAD_SIDE = 600;
+const sketchpad = document.querySelector("#sketchpad");
+
+const sliderContainer = document.querySelector("#slider-container");
+const slider = document.querySelector("#slider");
+const sliderValue = document.querySelector("#slider-value");
+
+sliderValue.textContent = `Resolution: (${slider.value} x ${slider.value})`;
 
 function generateSketchpadPixels(size = 16) { // default sketchpad size
-    const sketchpad = document.getElementById("sketchpad");
     sketchpad.innerHTML = ""; // resets (clears) the pad when its resized
     sketchpad.style.setProperty('--grid-size', size);
     // sketchpad.style.setProperty('--pad-side', PAD_SIDE);
