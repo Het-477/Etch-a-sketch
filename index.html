@@ -12,11 +12,14 @@
 <body>
     <div id="sketch-area" class="container">
         <div class="sketchpad" id="sketchpad"></div>
-        <div id="size-slider"></div>
     </div>
 
     <div class="controls">
-        <button onclick="eraseSketchPad()">Clear</button>
+        <div id="slider-container">
+            <input id="slider" class="slider" type="range" min="1" max="100" value="16">
+            <p id="slider-value"></p>
+        </div>
+        <button id="clear-btn" onclick="eraseSketchPad()">Clear</button>
     </div>
 
 
