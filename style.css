@@ -4,6 +4,12 @@
     box-sizing: border-box;
 } */
 
+:root {
+    --pad-size: 520px;
+    --accent-color: rgb(1, 243, 162);
+    --primary-color: ;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -33,8 +39,8 @@ body {
 }
 
 .sketchpad-pixel {
-    width: calc(var(--pad-size)/ var(--grid-size));
-    height: calc(var(--pad-size)/ var(--grid-size));
+    width: calc(var(--pad-size) / var(--grid-size));
+    height: calc(var(--pad-size) / var(--grid-size));
     background-color: white;
     border: 1px solid rgb(252, 204, 141);
     box-sizing: border-box;
@@ -75,7 +81,7 @@ body {
     appearance: none;
     width: 25px;
     height: 22px;
-    background: rgb(1, 243, 162);
+    background: var(--accent-color);
     cursor: pointer;
     /* border-radius: 5px; */
     /* border: 2px solid darkred; */
@@ -85,7 +91,7 @@ body {
 .slider::-moz-range-thumb {
     width: 25px;
     height: 22px;
-    background: rgb(1, 243, 162);
+    background: var(--accent-color);
     cursor: pointer;
     /* border-radius: 5px; */
     /* border: 2px solid darkred; */
