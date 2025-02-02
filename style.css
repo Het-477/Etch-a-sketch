@@ -27,14 +27,14 @@ body {
 #sketchpad {
     display: flex;
     flex-wrap: wrap;
-    width: 600px;
-    height: 600px;
+    width: var(--pad-size);
+    height: var(--pad-size);
     border: 2px solid black;
 }
 
 .sketchpad-pixel {
-    width: calc(600px / var(--grid-size));
-    height: calc(600px / var(--grid-size));
+    width: calc(var(--pad-size)/ var(--grid-size));
+    height: calc(var(--pad-size)/ var(--grid-size));
     background-color: white;
     border: 1px solid rgb(252, 204, 141);
     box-sizing: border-box;
@@ -43,7 +43,7 @@ body {
 .controls {
     margin-bottom: 10px;
     /* padding: 5px; */
-    width: 600px;
+    width: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
