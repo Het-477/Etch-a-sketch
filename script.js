@@ -4,12 +4,10 @@ const sliderContainer = document.querySelector("#slider-container");
 const slider = document.querySelector("#slider");
 const sliderValue = document.querySelector("#slider-value");
 
-sliderValue.textContent = `RESOLUTION: (${slider.value} x ${slider.value})`;
 
-function generateSketchpadPixels(size) { // default sketchpad size
+function generateSketchpadPixels(size = 16) { // default sketchpad size
     sketchpad.innerHTML = ""; // resets (clears) the pad when its resized
     sketchpad.style.setProperty('--grid-size', size);
-    // sketchpad.style.setProperty('--pad-side', PAD_SIDE);
 
     for (let i = 0; i < size * size; i++) {
         const pixel = document.createElement("div");
@@ -27,4 +25,18 @@ function eraseSketchPadPixels() {
     });
 }
 
-generateSketchpadPixels(16)
+sliderValue.textContent = `${slider.value}px x ${slider.value}px (Resolution)`;
+slider.oninput = () => {
+    let resolutionText = `${slider.value}px x ${slider.value}px (Resolution)`;
+    sliderValue.innerHTML = resolutionText;
+    generateSketchpadPixels(slider.value); // No need to call eraseSketchPadPixels()
+};
+
+// slider.addEventListener("click", () => {
+//     let resolutionText = `${this.value} x ${this.value}px (Resolution)`;
+//     sliderValue.innerHTML = resolutionText;
+//     eraseSketchPadPixels()
+//     generateSketchpadPixels(this.value)
+// })
+
+generateSketchpadPixels();
