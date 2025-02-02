@@ -12,9 +12,7 @@ function generateSketchpadPixels(size = 16) { // default sketchpad size
     for (let i = 0; i < size * size; i++) {
         const pixel = document.createElement("div");
         pixel.classList.add("sketchpad-pixel");
-        pixel.addEventListener("mouseover", () => {
-            pixel.style.backgroundColor = "black";
-        });
+        drawPixels(pixel);
         sketchpad.appendChild(pixel);
     }
 }
@@ -22,6 +20,12 @@ function generateSketchpadPixels(size = 16) { // default sketchpad size
 function eraseSketchPadPixels() {
     document.querySelectorAll(".sketchpad-pixel").forEach(pixel => {
         pixel.style.backgroundColor = "white";
+    });
+}
+
+function drawPixels(pixel) {
+    pixel.addEventListener("mouseover", () => {
+        pixel.style.backgroundColor = "black";
     });
 }
 
