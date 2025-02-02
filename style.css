@@ -64,9 +64,10 @@ body {
     appearance: none;
     height: 24px;
     width: 100%;
-    background: rgb(185, 248, 227);
+    background: rgb(211, 255, 240);
     outline: none;
     transition: opacity .4s;
+    border-radius: 4px;
 }
 
 .slider::-webkit-slider-thumb {
@@ -84,8 +85,21 @@ body {
 .slider::-moz-range-thumb {
     width: 25px;
     height: 22px;
-    background: brown;
+    background: rgb(1, 243, 162);
     cursor: pointer;
     /* border-radius: 5px; */
-    border: 2px solid darkred;
+    /* border: 2px solid darkred; */
+}
+
+
+#slider-value {
+    background-color: blueviolet;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4px;
+    padding: 4px;
+    font-family: JetBrains Mono, monospace;
+    font-size: medium;
 }
