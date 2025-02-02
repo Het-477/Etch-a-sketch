@@ -23,12 +23,14 @@ function eraseSketchPadPixels() {
     });
 }
 
+// fills the pixels 
 function drawPixels(pixel) {
     pixel.addEventListener("mouseover", () => {
         pixel.style.backgroundColor = "black";
     });
 }
 
+// for slider interactivity 
 sliderValue.textContent = `${slider.value}px x ${slider.value}px (Resolution)`;
 slider.oninput = () => {
     let resolutionText = `${slider.value}px x ${slider.value}px (Resolution)`;
