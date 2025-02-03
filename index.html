@@ -11,22 +11,21 @@
 </head>
 
 <body>
-    <div>
+    <div id="toggle-controls">
         <span class="material-symbols-outlined">grid_4x4</span>
-        <span class="material-symbols-outlined">ink_eraser</span>
+        <span class="material-symbols-outlined" onclick="eraseSketchPadPixels()">ink_eraser</span>
         <span class="material-symbols-outlined">stylus_note</span>
         <span class="material-symbols-outlined">palette</span>
     </div>
     <div id="sketch-area" class="container">
         <div class="sketchpad" id="sketchpad"></div>
-    </div>
 
-    <div class="controls">
-        <div id="slider-container">
-            <input id="slider" class="slider" type="range" min="1" max="100" value="16">
-            <span id="slider-value"></span>
+        <div class="controls">
+            <div id="slider-container">
+                <input id="slider" class="slider" type="range" min="1" max="100" value="16">
+                <span id="slider-value"></span>
+            </div>
         </div>
-        <button id="clear-btn" onclick="eraseSketchPadPixels()">Clear</button>
     </div>
 
 
