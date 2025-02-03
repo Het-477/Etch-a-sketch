@@ -8,6 +8,7 @@
     --pad-size: 520px;
     --accent-color: rgb(1, 243, 162);
     --primary-color: ;
+    --inactive-color: #979797;
 }
 
 * {
@@ -108,4 +109,22 @@ body {
     padding: 4px;
     font-family: JetBrains Mono, monospace;
     font-size: medium;
+}
+
+#toggle-controls {
+    display: flex;
+    gap: 60px;
+    margin: 8px;
+    color: var(--inactive-color);
+    background-color: #D7E6FA;
+    padding: 8px;
+    /* cursor: pointer; */
+}
+
+.material-symbols-outlined {
+    cursor: pointer;
+}
+
+.material-symbols-outlined:hover {
+    color: var(--accent-color);
 }
