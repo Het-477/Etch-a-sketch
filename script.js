@@ -26,7 +26,9 @@ function eraseSketchPadPixels() {
 // fills the pixels 
 function drawPixels(pixel) {
     pixel.addEventListener("mouseover", () => {
-        pixel.style.backgroundColor = "black";
+        // if (pixel.addEventListener("click") == true) {
+            pixel.style.backgroundColor = "black";
+        // }
     });
 }
 
