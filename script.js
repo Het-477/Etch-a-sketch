@@ -26,7 +26,7 @@ function eraseSketchPadPixels() {
     });
 }
 
-// Function to attach event listeners
+// Function to attach event listeners and also for drawing pixels 
 function attachSketchpadListeners() {
     sketchpad.addEventListener("mousedown", (e) => {
         if (e.target.classList.contains("sketchpad-pixel")) {
