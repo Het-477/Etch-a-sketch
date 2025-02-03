@@ -4,17 +4,20 @@ const sliderContainer = document.querySelector("#slider-container");
 const slider = document.querySelector("#slider");
 const sliderValue = document.querySelector("#slider-value");
 
+let isDrawing = false; // Track if mouse button is pressed
 
-function generateSketchpadPixels(size = 16) { // default sketchpad size
-    sketchpad.innerHTML = ""; // resets (clears) the pad when its resized
+function generateSketchpadPixels(size = 16) {
+    sketchpad.innerHTML = ""; // Clears sketchpad
     sketchpad.style.setProperty('--grid-size', size);
 
     for (let i = 0; i < size * size; i++) {
         const pixel = document.createElement("div");
         pixel.classList.add("sketchpad-pixel");
-        drawPixels(pixel);
         sketchpad.appendChild(pixel);
     }
+
+    // Add event listeners after generating pixels
+    attachSketchpadListeners();
 }
 
 function eraseSketchPadPixels() {
@@ -23,28 +26,36 @@ function eraseSketchPadPixels() {
     });
 }
 
-// fills the pixels 
-function drawPixels(pixel) {
-    pixel.addEventListener("mouseover", () => {
-        // if (pixel.addEventListener("click") == true) {
-            pixel.style.backgroundColor = "black";
-        // }
+// Function to attach event listeners
+function attachSketchpadListeners() {
+    sketchpad.addEventListener("mousedown", (e) => {
+        if (e.target.classList.contains("sketchpad-pixel")) {
+            isDrawing = true;
+            e.target.style.backgroundColor = "black";
+        }
+    });
+
+    sketchpad.addEventListener("mouseover", (e) => {
+        if (isDrawing && e.target.classList.contains("sketchpad-pixel")) {
+            e.target.style.backgroundColor = "black";
+        }
+    });
+
+    document.addEventListener("mouseup", () => {
+        isDrawing = false; // Stop drawing when the mouse button is released
+    });
+
+    sketchpad.addEventListener("mouseleave", () => {
+        isDrawing = false; // Stop drawing when leaving the sketchpad
     });
 }
 
-// for slider interactivity 
+// Slider interactivity
 sliderValue.textContent = `${slider.value}px x ${slider.value}px (Resolution)`;
 slider.oninput = () => {
     let resolutionText = `${slider.value}px x ${slider.value}px (Resolution)`;
     sliderValue.innerHTML = resolutionText;
-    generateSketchpadPixels(slider.value); // No need to call eraseSketchPadPixels()
+    generateSketchpadPixels(slider.value);
 };
-
-// slider.addEventListener("click", () => {
-//     let resolutionText = `${this.value} x ${this.value}px (Resolution)`;
-//     sliderValue.innerHTML = resolutionText;
-//     eraseSketchPadPixels()
-//     generateSketchpadPixels(this.value)
-// })
 
 generateSketchpadPixels();
